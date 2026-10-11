@@ -2,7 +2,6 @@
 Send Time Optimization (STO) - Learning-to-Rank (LTR) com XGBRanker
 ===================================================================
 
-Laboratório inspirado no projeto real `predictive-multichannel-send-datetime`.
 Demonstração de como otimizar o horário de disparo de mensagens por lead
 usando Learning-to-Rank (LTR) agrupado por lead_id, comparado com heurísticas
 de baseline (Tenant Global Frequency) e fallback para Cold-Start.
