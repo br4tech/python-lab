@@ -1,0 +1,5 @@
+{
+  "rmse": 0.0757,
+  "r2_score": 0.9996,
+  "test_samples": 2
+}
