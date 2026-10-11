@@ -29,8 +29,9 @@ python-lab/
 │   ├── salary_model.joblib       # Modelo serializado pronto para inferência
 │   └── metrics.json              # Relatório auditável de performance
 │
-├── labs/                         # 🧪 Estudos conceituais avançados de NLP & LLMs
+├── labs/                         # 🧪 Estudos conceituais avançados de NLP, Ranking & LLMs
 │   ├── scikit-learn.py           # O clássico monolítico (referência de estudo)
+│   ├── send_time_ranker.py       # Learning-to-Rank (LTR com XGBRanker) para Send Time Optimization (STO)
 │   ├── embeddings_lead_scoring.py# Vetorização e cálculo de similaridade de cosseno
 │   ├── multi_campaign_routing.py # Roteamento em lote via álgebra matricial
 │   ├── zero_shot_classifier.py   # Inferência NLI sem retreino (Zero-Shot)
@@ -91,6 +92,7 @@ curl -X POST http://localhost:5000/predict \
 
 Os scripts de exploração e estudo conceitual estão organizados em `labs/`:
 
+* **`uv run python labs/send_time_ranker.py`**: Otimização Inteligente de Envio (**Send Time Optimization - STO**) usando **Learning-to-Rank (LTR)** com `xgboost.XGBRanker`. Avaliação em 168 slots candidatos (7 dias x 24h) agrupados por lead, métricas NDCG e NDCG@k comparadas a baseline heurístico de tenant, e inferência em tempo real com fallback para Cold-Start.
 * **`uv run python labs/embeddings_lead_scoring.py`**: Representação de textos em 384 dimensões e cálculo de afinidade semântica para qualificação de leads.
 * **`uv run python labs/multi_campaign_routing.py`**: Multiplicação de matrizes (`np.matmul`) para triagem de centenas de leads contra múltiplas campanhas simultâneas.
 * **`uv run python labs/zero_shot_classifier.py`**: Classificação lógica usando o modelo multilíngue `mDeBERTa-v3` para lidar com negações e contextos mistos sem dados de treino prévios.
